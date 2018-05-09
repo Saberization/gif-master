@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <title></title>
+
+    <style>
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .upload,
+        .img-area {
+            width: 568px;
+            margin: 0 auto;
+        }
+
+        .upload {
+            background-color: #fbfbfb;
+            border: 1px solid #ccc;
+            padding: 1em;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .upload-btn {
+            display: inline-block;
+            min-width: 50px;
+            padding: 9px 15px;
+            background-color: #2486ff;
+            color: #fff;
+            border: 1px solid #2486ff;
+            border-radius: 5px;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+        }
+
+        .drag-area {
+            display: inline-block;
+            width: 72%;
+            padding: 4em 0;
+            margin-left: 1em;
+            border: 1px dashed #ddd;
+            color: #999;
+            text-align: center;
+            vertical-align: middle;
+            background-color: #fff;
+        }
+
+        .build-btn {
+            display: block;
+            margin: 15px auto auto auto;
+            background-color: #ff7772;
+            color: #fff;
+            padding: 9px 15px;
+            border: 1px solid #ff7772;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 20px;
+            cursor: pointer;
+        }
+
+        .drag-area.dragenter {
+            box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0);
+            color: #333;
+            border-color: #069;
+        }
+
+        .img-list-item {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-content: center;
+            height: 80px;
+            margin-top: 20px;
+            line-height: 80px;
+        }
+
+        .img-list-item img {
+            height: 80px;
+            max-width: 100%;
+        }
+
+        .img-list-item input {
+            height: 40px;
+            line-height: 40px;
+            border-radius: 3px;
+            border: 1px solid #d0d0d5;
+            padding-left: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .img-list-item .input-chat {
+            margin-top: 20px;
+        }
+
+        .img-list-item .input-timmer {
+            width: 60px;
+        }
+
+        .result {
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        #preview {
+            display: block;
+            margin: 30px auto auto auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 上传区域 -->
+        <div class="upload">
+            <label for="upload" class="upload-btn">上传序列图片</label>
+            <input type="file" id="upload" multiple accept="image/jpeg, image/png, image/gif" class="hidden">
+            <span id="drag-area" class="drag-area">或者将图片拖拽至此上传</span>
+        </div>
+
+        <!-- 展示图片区域 -->
+        <div class="img-area">
+            <ul class="img-list" id="img-list">
+            </ul>
+        </div>
+
+        <!-- 生成图片 -->
+        <button id="build-btn" class="build-btn">生成gif图片</button>
+    </div>
+
+    <!-- 展示结果 -->
+    <img src="" alt="" id="preview">
+
+    <script src="./showcase.min.js"></script>
+</body>
+
+</html>
