@@ -102,9 +102,9 @@
             p.then(function (b64) {
                 const tpl = `<li class="img-list-item">
                                 <img src="${b64}" alt="">
-                                <input type="text" class="input input-chat" value="郭天琦❤" placeholder="输入对话信息">
+                                <input type="text" class="input input-chat" placeholder="输入对话信息">
                                 <div class="timmer">延时:
-                                    <input type="text" class="input input-timmer" value="3"> ms
+                                    <input type="text" class="input input-timmer"> ms
                                 </div>
                                 <a href="javascript:void(0)" class="del">删除</a>
                             </li>`;
