@@ -12,9 +12,8 @@ gulp.task('compressimg', function() {
 		}))
 		.pipe(gulp.dest('./images/'));
 });
-
-gulp.task('babel', function() {
-	gulp.src(['./libs/gif.js', './showcase.js'])
+	
+gulp.src(['./libs/gif.js', './showcase.js'])
 		.pipe(gulpConcat('showcase.js'))
 		.pipe(gulpBabel({
 			presets: ['env']
